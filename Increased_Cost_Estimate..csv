@@ -1,0 +1,21 @@
+﻿Estimate summary
+Upfront cost,Monthly cost,Total 12 months cost,Currency
+0,13889.800000000001,166677.60,USD
+,,* Includes upfront cost
+
+
+Detailed Estimate
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Status,Configuration summary
+My Estimate,US East (N. Virginia),"50k requests/h, average request size 200gb, 10gb/h",Network Address Translation (NAT) Gateway,0,356.85,4282.20,USD,,Number of NAT Gateways (1)
+My Estimate,US East (N. Virginia),One instance for Web Application and one for Web Server,Amazon EC2 ,0,3197.4,38368.80,USD,,"Tenancy (Dedicated Hosts), Workload (Consistent, Number of instances: 2), Advance EC2 instance (m5), Pricing strategy ( 3yr  No Upfront)"
+My Estimate,US East (N. Virginia),"Take 1gb per user as average = 50k GB/month, 25k data are accessed frequently and 25k date are accessed infrequently",S3 Intelligent - Tiering,0,1158,13896.00,USD,,"S3 INT Average Object Size (16 MB), Percentage of Storage in INT-Frequent Access Tier (1), S3 INT storage (50000 GB per month)"
+My Estimate,US East (N. Virginia),"50k request per hour, average request size 200kb",Amazon CloudFront,0,648,7776.00,USD,,"Data transfer out to internet (7200 GB per month), Number of requests (HTTPS) (36000000 per month)"
+My Estimate,US East (N. Virginia),One master DB and one read replica,Amazon RDS for MySQL,0,935.3467,11224.16,USD,,"Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (256 GB), Quantity (2), Instance type (db.m1.large), Utilization (On-Demand only) (100 %Utilized/Month), Deployment option (Multi-AZ), Pricing strategy (OnDemand), Additional backup storage (256 GB), Total Size of Backup Processed for Export (GB) (256 per day)"
+My Estimate,US East (N. Virginia),"1 Application Load Balancer, 5k requests/h = 10gb/h",Application Load Balancer,0,133.23,1598.76,USD,,Number of Application Load Balancers (1)
+My Estimate,US East (N. Virginia),"1 Application Load Balancer, 5k requests/h = 10gb/h",Network Load Balancer,0,60.23,722.76,USD,,"Number of Network Load Balancers (1), Processed bytes per NLB for TCP (10 GB per hour)"
+My Estimate,US East (N. Virginia),Auto scaling instances,Amazon EC2 ,0,7400.74,88808.88,USD,,"Tenancy (Dedicated Hosts), Workload (Consistent, Number of instances: 2), Advance EC2 instance (m5), Pricing strategy (On-Demand Utilization: 100 %Utilized/Month)"
+
+
+
+Acknowledgement
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
