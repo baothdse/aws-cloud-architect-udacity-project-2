@@ -6,16 +6,23 @@ Upfront cost,Monthly cost,Total 12 months cost,Currency
 
 Detailed Estimate
 Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Status,Configuration summary
-My Estimate,US East (N. Virginia),"50k requests/h, average request size 200gb, 10gb/h",Network Address Translation (NAT) Gateway,0,356.85,4282.20,USD,,Number of NAT Gateways (1)
-My Estimate,US East (N. Virginia),One instance for Web Application and one for Web Server,Amazon EC2 ,0,1525.7,18308.40,USD,,"Tenancy (Dedicated Hosts), Workload (Consistent, Number of instances: 2), Advance EC2 instance (m4), Pricing strategy ( 3yr  No Upfront)"
-My Estimate,US East (N. Virginia),"Take 1gb per user as average = 50k GB/month, 25k data are accessed frequently and 25k date are accessed infrequently",S3 Standard - Infrequent Access,0,125,1500.00,USD,,S3 Standard-IA storage (10000 GB per month)
-My Estimate,US East (N. Virginia),"Take 1gb per user as average = 50k GB/month, 25k data are accessed frequently and 25k date are accessed infrequently",S3 Glacier Instant Retrieval,0,160,1920.00,USD,,S3 Glacier Instant Retrieval storage (40000 GB per month)
-My Estimate,US East (N. Virginia),"50k request per hour, average request size 200kb",Amazon CloudFront,0,648,7776.00,USD,,"Data transfer out to internet (7200 GB per month), Number of requests (HTTPS) (36000000 per month)"
-My Estimate,US East (N. Virginia),One master DB and one read replica,Amazon RDS for MySQL,0,737.2038,8846.45,USD,,"Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (256 GB), Quantity (2), Instance type (db.m3.large), Utilization (On-Demand only) (100 %Utilized/Month), Deployment option (Multi-AZ), Pricing strategy (OnDemand), Additional backup storage (256 GB), Total Size of Backup Processed for Export (GB) (256 per week)"
-My Estimate,US East (N. Virginia),"1 Application Load Balancer, 5k requests/h = 10gb/h",Application Load Balancer,0,133.23,1598.76,USD,,Number of Application Load Balancers (1)
-My Estimate,US East (N. Virginia),Auto scaling instances,Amazon EC2 ,0,2698.08,32376.96,USD,,"Tenancy (Dedicated Hosts), Workload (Consistent, Number of instances: 2), Advance EC2 instance (c3), Pricing strategy (On-Demand Utilization: 100 %Utilized/Month)"
+"My Estimate,US East (N. Virginia),""50k requests/h, average request size 200gb, 10gb/h"",Network Address Translation (NAT) Gateway,0,356.85,4282.20,USD,,Number of NAT Gateways (1)"
+"My Estimate,US East (N. Virginia),One instance for Web Application and one for Web Server,Amazon EC2 ,0,1525.7,18308.40,USD,,""Tenancy (Dedicated Hosts), Workload (Consistent, Number of instances: 2), Advance EC2 instance (m4), Pricing strategy ( 3yr  No Upfront)"""
+"My Estimate,US East (N. Virginia),""Take 1gb per user as average = 50k GB/month, 25k data are accessed frequently and 25k date are accessed infrequently"",S3 Standard - Infrequent Access,0,125,1500.00,USD,,S3 Standard-IA storage (10000 GB per month)"
+"My Estimate,US East (N. Virginia),""Take 1gb per user as average = 50k GB/month, 25k data are accessed frequently and 25k date are accessed infrequently"",S3 Glacier Instant Retrieval,0,160,1920.00,USD,,S3 Glacier Instant Retrieval storage (40000 GB per month)"
+"My Estimate,US East (N. Virginia),""50k request per hour, average request size 200kb"",Amazon CloudFront,0,648,7776.00,USD,,""Data transfer out to internet (7200 GB per month), Number of requests (HTTPS) (36000000 per month)"""
+"My Estimate,US East (N. Virginia),One master DB and one read replica,Amazon RDS for MySQL,0,737.2038,8846.45,USD,,""Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (256 GB), Quantity (2), Instance type (db.m3.large), Utilization (On-Demand only) (100 %Utilized/Month), Deployment option (Multi-AZ), Pricing strategy (OnDemand), Additional backup storage (256 GB), Total Size of Backup Processed for Export (GB) (256 per week)"""
+"My Estimate,US East (N. Virginia),""1 Application Load Balancer, 5k requests/h = 10gb/h"",Application Load Balancer,0,133.23,1598.76,USD,,Number of Application Load Balancers (1)"
+"My Estimate,US East (N. Virginia),Auto scaling instances,Amazon EC2 ,0,2698.08,32376.96,USD,,""Tenancy (Dedicated Hosts), Workload (Consistent, Number of instances: 2), Advance EC2 instance (c3), Pricing strategy (On-Demand Utilization: 100 %Utilized/Month)"""
 
 
 
 Acknowledgement
-"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
+* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.
+
+
+Rationale for Changes: 
+To reduce the cost, we will change a little bit in the way we use aws services:
+Change S3 standard to S3 Glacier Instant Retrieval and S3 Standard Infrequent Access (Assume that there are 10k gb data are accessed infrequently on total)
+Change instance type from m5 to m4 to reduce cost but the performance is not decrease too much.
+Change scaled instances type from m3 to c3 for optimize compute but reduce a little bit cost.
